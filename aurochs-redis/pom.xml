@@ -7,9 +7,9 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>aurochs-client</artifactId>
+	<artifactId>aurochs-redis</artifactId>
 	<packaging>jar</packaging>
-	<name>aurochs-client</name>
+	<name>aurochs-redis</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

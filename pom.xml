@@ -7,9 +7,10 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <modules>
+  	<module>aurochs-common</module>
     <module>aurochs-server</module>
-    <module>aurochs-client</module>
-    <module>aurochs-common</module>
+    <module>aurochs-redis</module>
+    <module>aurochs-mysql</module>
   </modules>
   <packaging>pom</packaging>
 
