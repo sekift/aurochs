@@ -85,7 +85,7 @@ solve3={cluster1=[b1,g2;s3,b4],cluster2=[s1,b2;g3,s4],cluster3=[g1,s2;b3,g4]} <b
 
 
 ## 未来
-- abc <br/>
+- 1.机器配置后期考虑使用Zookeeper做高可用； <br/>
 
 ## 问题
 - 暂时未发现问题。<br />
