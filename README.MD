@@ -14,16 +14,16 @@
 5、大内容使用本地缓存；<br />
 
 ## 项目划分
-按照不同的功能，分为三个项目；<br />
+按照不同的功能，分为四个项目；<br />
 aurochs：父项目<br />
 - aurochs-common：公共类<br />
 1、提供基本功能，例如加载文件、算法等；<br />
-- aurochs-server：服务端<br />
+- aurochs-server：配置端<br />
 1、负责划分集群，分配、管理集群；<br />
-- aurochs-redis：redis客户端<br />
+- aurochs-redis：redis服务端<br />
 1、从server获取集群，处理转移；<br />
 2、与redis连接，操作数据。<br />
-- aurochs-mysql：mysql客户端<br />
+- aurochs-mysql：mysql服务端<br />
 1、从server获取集群，处理转移；<br />
 2、与mysql连接，操作数据。<br />
 
