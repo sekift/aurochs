@@ -14,6 +14,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jedis.version>3.1.0</jedis.version>
 	</properties>
 
 	<dependencies>
@@ -21,6 +22,12 @@
 			<groupId>cn.aurochs.www</groupId>
 			<artifactId>aurochs-common</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<system_properties>
+		<!-- 
+			<service.provider>spring</service.provider> 
+		 --> 
+		<service.config>fw_context.xml</service.config>
+	</system_properties>
+
+	<app_properties>
+		<myDemoConfig>hello</myDemoConfig>
+	</app_properties>
+</config>

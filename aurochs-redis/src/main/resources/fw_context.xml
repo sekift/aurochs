@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+         http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+         http://www.springframework.org/schema/context 
+         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+      
+       <bean id="FwRedisPoolService"  
+      		class="cn.aurochs.www.redis.jedis.FwRedisPoolService"  init-method="initializePlugin">
+      		<!-- 数据库连接池配置，值为空默认查找 /proxool.xml-->
+      		<property name="redisPoolConfig"  value="/config/redis_pool.xml"/>
+      		<!-- 注意：写节点配置是次序有关的，一旦配置，有数据写入了，结点间的次序就不能改变，否则就会出现找不到数据的情况 -->
+			<!-- 映射关系语法: ';'号分从库节点关系标记, ':'号节点主从库(master-slave)关系标记, ','号分数据库主从(master-slave)组标记 -->
+			<!-- 例子: m0:s0;s1;s2,m1:s0;s1,m2:s0;s1;s2 m0 s0 ..... 是proxool连接池别名 --> 
+      		<property name="redisServerMapping"  value="redis_1:redis_1,redis_2:redis_2"/>
+      		<!-- 数据库服务器分组, 组中节点定位算法: 取模(mod), 一致性哈希(consistent-hash) -->
+      		<property name="itemLocateAlgorithm"  value="consistent-hash"/>
+      </bean>
+</beans>

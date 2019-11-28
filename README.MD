@@ -3,6 +3,9 @@
 2、在这里aurochs是一个自动划分集群、管理集群的服务，拥有高性能、高可用、高扩展的特性。<br />
 
 ## 更新
+2019-11-28<br />
+1.完成redis分布式逻辑。<br />
+
 2018-05-28 初版 <br />
 1.完成划分算法，完成集群自动划分。<br />
 
@@ -23,6 +26,7 @@ aurochs：父项目<br />
 - aurochs-redis：redis服务端<br />
 1、从server获取集群，处理转移；<br />
 2、与redis连接，操作数据。<br />
+Redis使用4.0版本，同时也能用Redis2.6（代码有少量改动）。<br />
 - aurochs-mysql：mysql服务端<br />
 1、从server获取集群，处理转移；<br />
 2、与mysql连接，操作数据。<br />

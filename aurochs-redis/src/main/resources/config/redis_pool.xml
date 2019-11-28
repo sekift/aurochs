@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redis-pool-config>
+	<redis-pool>
+		<alias>redis_1</alias>
+		<server>127.0.0.1</server>
+		<port>6379</port>
+		<count>5</count>
+		<timeout>3000</timeout>
+		<lifo>true</lifo>
+		<maxTotal>50</maxTotal>
+		<maxIdle>10</maxIdle>
+		<maxWait>15000</maxWait>
+		<minEvictableIdleTimeMillis>100000</minEvictableIdleTimeMillis>
+		<minIdle>3</minIdle>
+		<numTestsPerEvictionRun>-2</numTestsPerEvictionRun>
+		<testOnBorrow>false</testOnBorrow>
+		<testOnReturn>true</testOnReturn>
+		<testWhileIdle>true</testWhileIdle>
+		<timeBetweenEvictionRunsMillis>120000</timeBetweenEvictionRunsMillis>
+	</redis-pool>
+	<redis-pool>
+		<alias>redis_2</alias>
+		<server>127.0.0.1</server>
+		<port>6379</port>
+		<count>5</count>
+		<timeout>3000</timeout>
+		<lifo>true</lifo>
+		<maxTotal>50</maxTotal>
+		<maxIdle>10</maxIdle>
+		<maxWait>15000</maxWait>
+		<minEvictableIdleTimeMillis>100000</minEvictableIdleTimeMillis>
+		<minIdle>3</minIdle>
+		<numTestsPerEvictionRun>-2</numTestsPerEvictionRun>
+		<testOnBorrow>false</testOnBorrow>
+		<testOnReturn>true</testOnReturn>
+		<testWhileIdle>true</testWhileIdle>
+		<timeBetweenEvictionRunsMillis>120000</timeBetweenEvictionRunsMillis>
+	</redis-pool>
+</redis-pool-config>
+
