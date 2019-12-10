@@ -3,7 +3,7 @@
 	<redis-pool>
 		<alias>redis_1</alias>
 		<server>127.0.0.1</server>
-		<port>6379</port>
+		<port>6377</port>
 		<count>5</count>
 		<timeout>3000</timeout>
 		<lifo>true</lifo>
@@ -21,7 +21,7 @@
 	<redis-pool>
 		<alias>redis_2</alias>
 		<server>127.0.0.1</server>
-		<port>6379</port>
+		<port>6378</port>
 		<count>5</count>
 		<timeout>3000</timeout>
 		<lifo>true</lifo>

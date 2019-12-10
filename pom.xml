@@ -10,6 +10,7 @@
   	<module>aurochs-common</module>
     <module>aurochs-server</module>
     <module>aurochs-redis</module>
+    <module>aurochs-redis-sentinel</module>
     <module>aurochs-mysql</module>
   </modules>
   <packaging>pom</packaging>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 存放访问其它资源的信息 代码发布时,由paas重新生成 -->
+<!-- id 为resourceid, class为resource的实现类, 资原需要用到的参数property为传过去的参数 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+         http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context 
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="300" />
+		<property name="maxIdle" value="10" />
+		<property name="testOnBorrow" value="false" />        
+	</bean>
+
+	<bean id="redisSentinel1" class="redis.clients.jedis.JedisSentinelPool">
+		<constructor-arg index="0" value="master1" />
+		<constructor-arg index="1">
+			<set>
+				<value>127.0.0.1:26379</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg index="2" ref="jedisPoolConfig" />
+	</bean>
+	
+	<bean id="redisSentinel2" class="redis.clients.jedis.JedisSentinelPool">
+		<constructor-arg index="0" value="master2" />
+		<constructor-arg index="1">
+			<set>
+				<value>127.0.0.1:27379</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg index="2" ref="jedisPoolConfig" />
+	</bean>
+	
+
+	<bean id="RedisCacheService" class="cn.aurochs.www.redis.sentinel.RedisCacheServiceImpl">
+		<property name="groups">
+			<list>
+				<ref bean="redisSentinel1" />
+				<ref bean="redisSentinel2" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

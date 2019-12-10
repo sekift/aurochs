@@ -3,8 +3,11 @@
 2、在这里aurochs是一个自动划分集群、管理集群的服务，拥有高性能、高可用、高扩展的特性。<br />
 
 ## 更新
+2019-12-10<br />
+1.完成redis-sentinel分组分布式逻辑。<br />
+
 2019-11-28<br />
-1.完成redis分布式逻辑。<br />
+1.完成redis纯分布式逻辑。<br />
 
 2018-05-28 初版 <br />
 1.完成划分算法，完成集群自动划分。<br />
@@ -17,16 +20,20 @@
 5、解决热点内容、动态扩展、高性能高可用等问题；<br />
 
 ## 项目划分
-按照不同的功能，分为四个项目；<br />
+按照不同的功能，分为五个项目；<br />
 aurochs：父项目<br />
 - aurochs-common：公共类<br />
 1、提供基本功能，例如加载文件、算法等；<br />
 - aurochs-server：配置端<br />
 1、负责划分集群，分配、管理集群；<br />
 - aurochs-redis：redis服务端<br />
-1、从server获取集群，处理转移；<br />
+1、从server获取集群配置，按一致性算法分组，组内实现failover；<br />
 2、与redis连接，操作数据。<br />
 Redis使用4.0版本，同时也能用Redis2.6（代码有少量改动）。<br />
+- aurochs-redis-sentinel：redis哨兵服务端<br />
+1、从server获取集群配置，按一致性算法分组，每一组都是一个sentinel集群，一主二从配置；<br />
+2、与redis连接，操作数据。<br />
+Redis使用3.x版本，暂未升级到4.x或5.x，升级估计代码需少量改动即可。
 - aurochs-mysql：mysql服务端<br />
 1、从server获取集群，处理转移；<br />
 2、与mysql连接，操作数据。<br />
