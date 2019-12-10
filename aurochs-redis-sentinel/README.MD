@@ -3,7 +3,7 @@
 2、与redis连接，操作数据。<br />
 
 ## 设计图
-
+![redis-sentinel](/doc/redis-sentinel.png)
 
 ## redis配置
 1）master1组的配置
