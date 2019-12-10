@@ -30,7 +30,7 @@ aurochs：父项目<br />
 1、从server获取集群配置，按一致性算法分组，组内实现failover；<br />
 2、与redis连接，操作数据。<br />
 Redis使用4.0版本，同时也能用Redis2.6（代码有少量改动）。<br />
-- aurochs-redis-sentinel：redis哨兵服务端<br />
+- aurochs-redis-sentinel：redis哨兵分组分布式服务端<br />
 1、从server获取集群配置，按一致性算法分组，每一组都是一个sentinel集群，一主二从配置；<br />
 2、与redis连接，操作数据。<br />
 Redis使用3.x版本，暂未升级到4.x或5.x，升级估计代码需少量改动即可。
